@@ -27,6 +27,19 @@ public class BlankFragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank2, container, false);
+        View view = inflater.inflate(R.layout.fragment_blank2, container, false);
+
+        Button button = view.findViewById(R.id.fragment2_button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                Toast.makeText(getActivity(), "Fragment2 버튼입니다!_getActivity", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Fragment2 버튼입니다!_getContext", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
     }
 }
