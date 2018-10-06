@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,16 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 
-        ListView listView = findViewById(R.id.list_view);
-        listView.setAdapter(adapter);
+        GridView gridView = findViewById(R.id.grid_view);
+        gridView.setAdapter(adapter);
 
         // 클릭 이벤트
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Toast.makeText(MainActivity.this, adapter.getItem(position).toString(), Toast.LENGTH_SHORT).show();
-            //    Toast.makeText(MainActivity.this, parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(MainActivity.this, parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
