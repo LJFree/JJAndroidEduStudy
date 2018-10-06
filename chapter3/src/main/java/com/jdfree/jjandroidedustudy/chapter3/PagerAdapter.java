@@ -1,5 +1,6 @@
 package com.jdfree.jjandroidedustudy.chapter3;
 
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -26,5 +27,11 @@ public class PagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return mData.size();
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return position + "번쨰";
     }
 }
