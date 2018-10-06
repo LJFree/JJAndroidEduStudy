@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,19 +18,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList list = new ArrayList();
+        ArrayList<InfoModel> list = new ArrayList<InfoModel>();
 
         for (int i = 0; i < 100; i++) {
-            list.add(i + "번째");
+            InfoModel model = new InfoModel("a" + i, "b" + i, "c" + i);
+            list.add(model);
         }
 
-        final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
+        final ListBaseAdapter adapter = new ListBaseAdapter(list);
 
-        GridView gridView = findViewById(R.id.grid_view);
-        gridView.setAdapter(adapter);
+        ListView listView = findViewById(R.id.list_view);
+        listView.setAdapter(adapter);
 
         // 클릭 이벤트
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
