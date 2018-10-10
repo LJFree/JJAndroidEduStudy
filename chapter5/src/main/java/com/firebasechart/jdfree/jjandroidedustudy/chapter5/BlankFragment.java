@@ -12,7 +12,7 @@ import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment extends Fragment {
+public class BlankFragment extends Fragment implements View.OnClickListener {
 
     private EditText editText;
     private TextView textView;
@@ -26,30 +26,15 @@ public class BlankFragment extends Fragment {
         editText = view.findViewById(R.id.editTextFragment1);
         textView = view.findViewById(R.id.textViewFragment1);
 
+        view.findViewById(R.id.sendButton).setOnClickListener(this);
+
         return view;
     }
 
-    public EditText getEditText() {
-        return editText;
-    }
+    @Override
+    public void onClick(View v) {
+        TextView textView = getActivity().findViewById(R.id.textViewActivity);
 
-    public void setEditText(EditText editText) {
-        this.editText = editText;
-    }
-
-    public void setEditTextValue(String text) {
-        this.editText.setText(text);
-    }
-
-    public TextView getTextView() {
-        return textView;
-    }
-
-    public void setTextView(TextView textView) {
-        this.textView = textView;
-    }
-
-    public void setTextViewValue(String text) {
-        this.textView.setText(text);
+        textView.setText(editText.getText().toString());
     }
 }

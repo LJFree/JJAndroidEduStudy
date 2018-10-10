@@ -22,10 +22,18 @@
         android:hint="Activity로 값 이동 시킵니다. 여기에 내용을 입력하세요."
         android:typeface="normal" />
 
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity 로 값 보내기" />
+
     <TextView
         android:id="@+id/textViewFragment1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:text="Activity 에서 값을 받습니다." />
+
+
 </LinearLayout>
