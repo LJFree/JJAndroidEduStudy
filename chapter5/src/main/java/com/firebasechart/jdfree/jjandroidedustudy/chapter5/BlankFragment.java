@@ -37,11 +37,19 @@ public class BlankFragment extends Fragment {
         this.editText = editText;
     }
 
+    public void setEditTextValue(String text) {
+        this.editText.setText(text);
+    }
+
     public TextView getTextView() {
         return textView;
     }
 
     public void setTextView(TextView textView) {
         this.textView = textView;
+    }
+
+    public void setTextViewValue(String text) {
+        this.textView.setText(text);
     }
 }

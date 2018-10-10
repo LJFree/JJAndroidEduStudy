@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     public void outputButton(View view) {
         EditText activityEditText = findViewById(R.id.editTextActivity);
 
-        TextView fragmentTextView = mBlankFragment.getTextView();
-        fragmentTextView.setText(activityEditText.getText().toString());
+        mBlankFragment.setTextViewValue(activityEditText.getText().toString());
     }
 }
