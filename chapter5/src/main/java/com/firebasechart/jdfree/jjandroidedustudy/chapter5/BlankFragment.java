@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +15,7 @@ import android.widget.EditText;
 public class BlankFragment extends Fragment {
 
     private EditText editText;
+    private TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,6 +24,7 @@ public class BlankFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
 
         editText = view.findViewById(R.id.editTextFragment1);
+        textView = view.findViewById(R.id.textViewFragment1);
 
         return view;
     }
@@ -32,5 +35,13 @@ public class BlankFragment extends Fragment {
 
     public void setEditText(EditText editText) {
         this.editText = editText;
+    }
+
+    public TextView getTextView() {
+        return textView;
+    }
+
+    public void setTextView(TextView textView) {
+        this.textView = textView;
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,10 +22,16 @@
         android:layout_weight="0.3"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="값 가져오기"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="sendButton"
+            android:onClick="inputButton"
             android:text="Fragment1 내용 가져오기" />
 
         <TextView
@@ -33,5 +40,23 @@
             android:layout_height="wrap_content"
             android:text="Fragment1에서 가져온 내용입니다." />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="값 보내기"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <EditText
+            android:id="@+id/editTextActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fragment 로 값 전달합니다."
+            android:typeface="normal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="outputButton"
+            android:text="보내기" />
     </LinearLayout>
 </LinearLayout>

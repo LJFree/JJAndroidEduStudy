@@ -9,19 +9,28 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private BlankFragment mBlankFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mBlankFragment = (BlankFragment)getSupportFragmentManager()
+                .findFragmentById(R.id.fragment1);
     }
 
-    public void sendButton(View view) {
-        BlankFragment blankFragment = (BlankFragment)getSupportFragmentManager()
-                .findFragmentById(R.id.fragment1);
-
-        EditText fragmentString = blankFragment.getEditText();
+    public void inputButton(View view) {
+        EditText fragmentEditText = mBlankFragment.getEditText();
 
         TextView textView = findViewById(R.id.textViewActivity);
-        textView.setText(fragmentString.getText());
+        textView.setText(fragmentEditText.getText());
+    }
+
+    public void outputButton(View view) {
+        EditText activityEditText = findViewById(R.id.editTextActivity);
+
+        TextView fragmentTextView = mBlankFragment.getTextView();
+        fragmentTextView.setText(activityEditText.getText().toString());
     }
 }
