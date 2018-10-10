@@ -8,8 +8,30 @@
     tools:context=".MainActivity">
 
     <fragment
-        android:id="@+id/fragmentList"
-        android:name="com.firebasechart.jdfree.jjandroidedustudy.chapter5.ListFragmentClass"
+        android:id="@+id/fragment1"
+        android:name="com.firebasechart.jdfree.jjandroidedustudy.chapter5.BlankFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        tools:layout="@layout/fragment_blank" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sendButton"
+            android:text="Fragment1 내용 가져오기" />
+
+        <TextView
+            android:id="@+id/textViewActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fragment1에서 가져온 내용입니다." />
+
+    </LinearLayout>
 </LinearLayout>
