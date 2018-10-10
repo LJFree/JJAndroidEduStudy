@@ -14,17 +14,13 @@ public class ExitDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        builder.setTitle("종료 할래?").setMessage("진짜 종료할꺼야?")
+        return new AlertDialog.Builder(getActivity()).setTitle("종료 할래?").setMessage("진짜 종료할꺼야?")
                 .setPositiveButton("종료할래", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         getActivity().finish();
                     }
-                }).setNegativeButton("안할래", null); // MainActivity 에서 show 를 하기 떄문에 여기에서는 생략
-
-        return builder.create(); // 반드시 AlertDialog.Builder 클래스 형태로 만든 builder 변수를 생성하는 것을 return
-                                 // 해줘야 한다.
+                }).setNegativeButton("안할래", null).create(); // 이처럼 return 에서 한번에 끝낼 수도 있다.
     }
 }
