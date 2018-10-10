@@ -23,7 +23,7 @@
         android:typeface="normal" />
 
     <Button
-        android:id="@+id/sendButton"
+        android:id="@+id/outputButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Activity 로 값 보내기" />
@@ -35,5 +35,9 @@
         android:background="@color/colorPrimary"
         android:text="Activity 에서 값을 받습니다." />
 
-
+    <Button
+        android:id="@+id/inputButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity 값 가져오기" />
 </LinearLayout>

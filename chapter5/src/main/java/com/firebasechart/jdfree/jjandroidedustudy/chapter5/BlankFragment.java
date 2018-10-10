@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,6 +17,8 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
 
     private EditText editText;
     private TextView textView;
+    private Button outputButton;
+    private Button inputButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,15 +29,31 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
         editText = view.findViewById(R.id.editTextFragment1);
         textView = view.findViewById(R.id.textViewFragment1);
 
-        view.findViewById(R.id.sendButton).setOnClickListener(this);
+        outputButton = view.findViewById(R.id.outputButton);
+        outputButton.setOnClickListener(this);
+
+        inputButton = view.findViewById(R.id.inputButton);
+        inputButton.setOnClickListener(this);
 
         return view;
     }
 
     @Override
     public void onClick(View v) {
-        TextView textView = getActivity().findViewById(R.id.textViewActivity);
 
-        textView.setText(editText.getText().toString());
+        if(v.getId() == outputButton.getId()){
+            TextView textView = getActivity().findViewById(R.id.textViewActivity);
+
+            textView.setText(editText.getText().toString());
+
+        }else if(v.getId() == inputButton.getId()){
+            EditText editText = getActivity().findViewById(R.id.editTextActivity);
+
+            String text = editText.getText().toString();
+
+            textView.setText(text);
+        }
+
+
     }
 }

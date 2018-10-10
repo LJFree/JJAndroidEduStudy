@@ -34,5 +34,16 @@
             android:layout_height="wrap_content"
             android:hint="Fragment 의 값 가져옵니다." />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="값 보내기"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <EditText
+            android:id="@+id/editTextActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fragment 로 값을 보냅니다." />
     </LinearLayout>
 </LinearLayout>
